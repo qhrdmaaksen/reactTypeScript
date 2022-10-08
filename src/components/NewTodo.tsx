@@ -1,6 +1,7 @@
 import React, {useRef} from 'react';
 
-const NewTodo: React.FC = () => {
+/*함수 명시 및 onAddTodo 함수 명시 및 인자에대한 타입 명시, 반환 값에대한 명시*/
+const NewTodo: React.FC<{onAddTodo: (text: string) => void}> = (props) => {
 	/*html 입력 요소 타입 명시
 	* 처음 만들때 연결할게 없기때문에 null 기본 값 설정*/
 	const TodoTextInputRef = useRef<HTMLInputElement>(null);
@@ -17,6 +18,9 @@ const NewTodo: React.FC = () => {
 			/*입력값이 없다면*/
 			return ; /*함수 종료*/
 		}
+
+
+		props.onAddTodo(enteredText)
 	}
 
   return (
