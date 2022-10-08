@@ -1,5 +1,6 @@
 import Todos from './components/Todos';
 import Todo from './dataModels/todo';
+import TodoItem from "./components/TodoItem";
 
 function App() {
   /*Todo class 활용해 객체 생성, 문자열 배열이아닌 Todo 의 객체 배열이됨*/
