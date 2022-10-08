@@ -1,4 +1,5 @@
 import React, {useRef} from 'react';
+import classes from './NewTodo.module.css';
 
 /*함수 명시 및 onAddTodo 함수 명시 및 인자에대한 타입 명시, 반환 값에대한 명시*/
 const NewTodo: React.FC<{onAddTodo: (text: string) => void}> = (props) => {
@@ -24,7 +25,7 @@ const NewTodo: React.FC<{onAddTodo: (text: string) => void}> = (props) => {
 	}
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className={classes.form}>
       <label htmlFor="todolist">할 일 목록</label>
       <input type="text" id="todolist" ref={TodoTextInputRef}/>
 			<button>추가</button>

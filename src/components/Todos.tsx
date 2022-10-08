@@ -1,6 +1,7 @@
 import React from 'react';
 import Todo from '../dataModels/todo';
 import TodoItem from './TodoItem';
+import classes from './Todos.module.css';
 
 /*React.FC 는 함수형 컴포넌트라는걸 명시하는것, 제네릭 타입,FC 타입의 기능은 여기에 어떤 객체 타입을 정의하든 객체의 기본 타입, children 프로퍼티와 합쳐주는 기능
  *홀화살표괄호에는 제네릭 타입을 만드는 게 아니라 내부적으로 사용되는 제네릭 타입에 구체적인 값을 집어넣음
@@ -11,7 +12,7 @@ import TodoItem from './TodoItem';
 const Todos: React.FC<{ items: Todo[] }> = (props) => {
   /*react 에서 props 는 언제나 object type*/
   return (
-    <ul>
+    <ul className={classes.todos}>
       {props.items.map((item) => (
         /*<li key={item.id}>{item.text}</li>*/
         <TodoItem key={item.id} text={item.text} />
