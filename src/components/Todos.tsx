@@ -9,13 +9,13 @@ import classes from './Todos.module.css';
 /*items 는 객체로 채워진 바열이며 그 객체는 Todo 클래스의 정의에 부합하는 객체이며 배열의 객체는 id 프로퍼티를 가짐
 *-type 은 문자열이고 text 프로퍼티도 가지며 클래스를 생성자로 사용해 생성된 객체임
 * --그 객체로 구성된 배열을 items 프로퍼티로 받아 id, text 를 사용 */
-const Todos: React.FC<{ items: Todo[] }> = (props) => {
+const Todos: React.FC<{ items: Todo[]; onRemoveTodo: (id: string) => void }> = (props) => {
   /*react 에서 props 는 언제나 object type*/
   return (
     <ul className={classes.todos}>
       {props.items.map((item) => (
         /*<li key={item.id}>{item.text}</li>*/
-        <TodoItem key={item.id} text={item.text} />
+        <TodoItem key={item.id} text={item.text} onRemoveTodo={props.onRemoveTodo.bind(null, item.id)} />
       ))}
     </ul>
   );
