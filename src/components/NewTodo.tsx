@@ -1,8 +1,10 @@
-import React, {useRef} from 'react';
+import React, {useRef, useContext} from 'react';
 import classes from './NewTodo.module.css';
+import {TodosContext} from '../store/todos-context';
 
 /*함수 명시 및 onAddTodo 함수 명시 및 인자에대한 타입 명시, 반환 값에대한 명시*/
-const NewTodo: React.FC<{onAddTodo: (text: string) => void}> = (props) => {
+const NewTodo: React.FC = () => {
+	const todoCtx = useContext(TodosContext)
 	/*html 입력 요소 타입 명시
 	* 처음 만들때 연결할게 없기때문에 null 기본 값 설정*/
 	const TodoTextInputRef = useRef<HTMLInputElement>(null);
@@ -21,7 +23,9 @@ const NewTodo: React.FC<{onAddTodo: (text: string) => void}> = (props) => {
 		}
 
 
-		props.onAddTodo(enteredText)
+		/*props.onAddTodo(enteredText)*/
+		/*context 에서 addTodoHandler Fn 으로 addTodo 설정하였음*/
+		todoCtx.addTodo(enteredText)
 	}
 
   return (
