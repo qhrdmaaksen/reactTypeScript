@@ -1,3 +1,3 @@
 # reactTypeScript
 
-![20221030_191646](https://user-images.githubusercontent.com/75942405/198873566-98613c7b-111b-4f5b-bd68-716d17044eb8.png)
+![20221031_001725](https://user-images.githubusercontent.com/75942405/198886476-14510c39-9e5b-483b-8225-021a4d086cb5.png)
